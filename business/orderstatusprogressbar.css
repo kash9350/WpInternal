@@ -1,0 +1,214 @@
+.mycustomwizard {
+    margin: 20px auto;
+    position: relative;
+    
+    left: -20px;
+    background: #fff;
+}
+
+    .mycustomwizard .nav-tabs {
+        position: relative;
+        margin: 40px auto;
+        margin-bottom: 0;
+        left: 0;
+        
+        border-bottom-color: #e0e0e0;
+    }
+
+    .mycustomwizard > div.mycustomwizard-inner {
+        position: relative;
+    }
+
+.connecting-line {
+    height: 2px;
+    background: #e0e0e0;
+    position: absolute;
+    width: 70%;
+    margin: 0 auto;
+    left: 10%;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.mycustomwizard .nav-tabs > li.active > a, .mycustomwizard .nav-tabs > li.active > a:hover, .mycustomwizard .nav-tabs > li.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+span.round-tab {
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+span.round-tab i{
+    color:#555555;
+}
+.mycustomwizard li.active span.round-tab {
+    background: #fff;
+    border: 2px solid #2eb161;
+    
+}
+.mycustomwizard li.active span.round-tab i{
+    color: #2eb161;
+}
+
+span.round-tab:hover {
+    color: #333;
+    border: 2px solid #333;
+}
+
+.mycustomwizard .nav-tabs > li {
+   
+    
+    
+    width: 33%;
+}
+
+.mycustomwizard li:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #2eb161;
+    transition: 0.1s ease-in-out;
+}
+
+.mycustomwizard li.active:after {
+    content: " ";
+    position: absolute;
+    left: 46%;
+    opacity: 1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #2eb161;
+}
+
+.mycustomwizard .nav-tabs > li a {
+    width: 70px;
+    height: 70px;
+    margin: 20px auto;
+    border-radius: 100%;
+    padding: 0;
+}
+
+    .mycustomwizard .nav-tabs > li a:hover {
+        background: transparent;
+    }
+
+.mycustomwizard .tab-pane {
+    position: relative;
+    padding-top: 50px;
+}
+
+.mycustomwizard h3 {
+    margin-top: 0;
+}
+
+@media( max-width : 585px ) {
+
+    .mycustomwizard {
+        width: 90%;
+        height: auto !important;
+    }
+
+    span.round-tab {
+        font-size: 16px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .mycustomwizard .nav-tabs > li a {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .mycustomwizard li.active:after {
+        content: " ";
+        position: absolute;
+        left: 35%;
+    }
+}
+
+
+
+
+
+
+
+
+/*MY customs-----------*/
+
+
+
+
+.orderstats .nav-tabs > li
+{
+    width: 24%;
+    text-align: center;
+}
+
+.orderstats .nav-tabs > li h4
+{
+    position: absolute;
+    text-align: center;
+    left: 10px;
+}
+
+.orderstats .nav-tabs > li h3
+{
+    position: absolute;
+    text-align: center;
+    left: 45%;
+    top: 80%;
+    font-size: 20px;
+    color: #f0ad4e;
+    opacity: 0;
+}
+
+.orderstats .nav-tabs > li:after
+{
+    content: "";
+}
+
+.orderstats .nav-tabs li.active:after 
+{
+    content: none;
+    
+}
+
+.orderstats .nav-tabs li.active h3
+{
+    opacity: 1;
+}
+
+.orderstats .nav-tabs li.active h4
+{
+    color:#f0ad4e;
+}
+
+.orderstats .nav-tabs li.active a .round-tab
+{
+    border-color:#f0ad4e;
+}
+.orderstats .nav-tabs li.active a .round-tab i
+{
+    color:#f0ad4e;
+}

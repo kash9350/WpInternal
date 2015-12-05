@@ -1,0 +1,2 @@
+[20-Aug-2015 12:41:32 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/whitepanda/public_html/editors/contentreview/uploadedFiles.php on line 42
+[20-Aug-2015 12:42:55 UTC] PHP Fatal error:  Call to a member function fetch_array() on a non-object in /home/whitepanda/public_html/editors/contentreview/uploadedFiles.php on line 42

@@ -1,0 +1,52 @@
+   <h3>Assign PayGrade for {{writer.email}}</h3>
+     <div class="list-group">
+  <a  class="list-group-item active">
+  THE PAYGRADE OPTIONS
+  </a>
+  <a  class="list-group-item">Novice : 200/- </a>
+  <a  class="list-group-item">Journey Man : 400/- </a>
+  <a  class="list-group-item">Veteran   : 800/- </a>
+  <a  class="list-group-item">Expert:  1600</a>
+</div>
+   <p color = "blue">The Writer has been assigned the following pay-grade: {{writer.paygrade}} with id {{writer.ID}}
+         </p>
+     </hr>
+      Enter new PayGrade    {{message}}
+          
+  <div class="input-group">
+  
+   <form   name="reviewForm" ng-controller="ReviewController">
+   
+       
+           
+   		<script>
+   			function assigning(){
+   			alert('Paygrade assigned');
+   			}
+   		</script>
+             
+               <fieldset class="form-group">
+              <select ng-model="writer.paygrade"  class="form-control  pull-right"    ng-options="stars for stars in ['200','400','800','1600']" title="levels" required >
+                  <option value="">Pay the writer</option>
+                </select>
+                </fieldset>
+                
+                <br>
+                 <button type="button"  onclick="assigning()"  ng-click='updateWriter()'  class="btn btn-primary pull-right" value="Confirm" >Confirm
+                 </button>
+                     
+    </form>
+    
+
+  
+    </div>
+      
+       
+        
+  
+ 
+     
+      
+      
+       
+       

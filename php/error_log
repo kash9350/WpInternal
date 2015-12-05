@@ -1,0 +1,1 @@
+[28-Jul-2015 18:59:03 UTC] PHP Fatal error:  Cannot redeclare checkbox() (previously declared in /home/whitepanda/public_html/php/businessHomepage.php:79) in /home/whitepanda/public_html/php/businessHomepage.php on line 748

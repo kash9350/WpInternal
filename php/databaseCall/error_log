@@ -1,0 +1,1 @@
+[21-Oct-2015 06:10:35 Asia/Calcutta] PHP Fatal error:  Cannot use object of type mysqli_result as array in /home/whitepanda/public_html/php/databaseCall/claimProject.php on line 79

@@ -1,0 +1,355 @@
+/**
+ * You can place your custom CSS statements here
+ * it is better to write everything custom here
+ * because this file won't be replaced during upgrade
+ * Don't forget to rename this file to "site.css"
+ */
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300');
+
+body {
+	background: #FFF url(images/body-bg.png) top repeat-x;
+	color: #5E7078;
+	font-family: 'Open Sans', Arial, Helvetica, Sans-Serif;
+	font-size: 14px;
+	line-height: 20px;
+	text-align: center;
+}
+
+a {
+	color: #d84c13;
+	color: #e26f41;
+	text-decoration: none;
+}
+a:hover {
+	color: #d84c13;
+	color: #c63d05;
+	text-decoration: underline;
+}
+
+h1 {
+	clear: both;
+	color: #5E7078;
+	font-size: 28px;
+	font-weight: 200;
+	margin: 0 0 15px 0;
+	padding: 10px 0 10px 0;
+/* 	border-bottom: 1px solid #CCC; */
+}
+
+h2 {
+	font-size: 1.2em;
+	color: #125d7d;
+	color: #5E7078;
+}
+
+#container {
+	width: 700px;
+	min-height: 800px;
+	margin: 0 auto;
+	padding: 150px 40px 0 40px;
+	text-align: left;
+	background: url(images/container-bg-no-logo.png) top center no-repeat;
+	position: relative;
+}
+
+.logo {
+	position: absolute;
+	top: 45px;
+	left: 15px;
+}
+
+/* the table on the signup form */
+table.vedit {
+	clear: both;
+	border: none;
+	width: 100%;
+}
+
+table.vedit th {
+	font-size: 16px;
+}
+table.vedit td {
+	border: none;
+}
+input {
+	border: 1px solid #dfdfdf;
+	border-top: 1px solid #BBB;
+	border-left: 1px solid #BBB;
+	padding: 5px;
+	background: #FFF url(images/input-bg.gif) repeat-x;
+}
+input.radio {
+}
+label {
+
+}
+.description {
+	display: block;
+	font-size: 12px;
+	line-height: 1.7;
+	font-family: Verdana, Arial, Sans-Serif;
+	color: #999;
+	color: #5E7078;
+}
+label.description {
+	display: block;
+	font-size: 11px;
+	font-family: Verdana, Arial, Sans-Serif;
+	color: #999;
+	margin: 0; padding: 0 0 5px 22px;
+}
+span.price {
+	color: #d84c13;
+}
+input.orange-button {
+	display: block;
+	background: url(images/button.png) no-repeat;
+	width: 150px; height: 39px; line-height: 39px;
+	text-align: center;
+	color: #FFF;
+	border: none;
+	margin: 0; padding: 0;
+	font-size: 14px;
+	float: right;
+	cursor: ;
+}
+
+/* the table on the login form */
+table.login {
+	width: 300px;
+	background: #F4F7F9;
+	border: 1px solid #d6d6d6;
+	margin: 0 0 40px 0;
+	padding: 12px 15px;
+}
+table.login input {
+	margin-left: 10px;
+}
+table.login input[type="text"], input[type="password"] {
+	background: #fff;
+	border: 1px solid #DEE9ED;
+	font-size: 16px;
+	padding: 8px;
+	color: #5E7078;
+}
+table.login input[type="text"]:focus, input[type="password"]:focus {
+	border: 1px solid #CFEEFB;
+	border-bottom: 1px solid #0094D2;
+}
+table.login .small {
+	font-size: 12px;
+	display: inline-block;
+	margin: 8px 0;
+}
+table.login input[type="submit"] {
+	background: #C5F574;
+	border: none;
+	border-bottom: 3px solid #B7DB86;
+	color: #556735;
+	padding: 8px 16px;
+	font-size: 16px;
+	-webkit-transition: all .1s linear;
+	-moz-transition: all .1s linear 0s;
+	cursor: pointer;
+}
+table.login input[type="submit"]:hover {
+	background: #A8D657;
+}
+table.login.lostpass {
+	background: #e9f3f8;
+	border: 1px solid #bad7e5;
+}
+table.login.lostpass th {
+	font-size: 16px;
+	vertical-align: top;
+}
+table.login.lostpass input[type="text"] {
+	border: 1px solid #bad7e5;
+}
+.current-customer-alert {
+	margin: 20px 0 30px;
+	padding:12px 20px;
+	background: #DFFFA8;
+	border-top: 3px solid #94B855;
+	color:#516332;
+}
+.current-customer-alert a {
+	padding:3px 8px;
+	margin:0 4px;
+	background:#a8d657;
+	border-bottom: 2px solid #8BAD4F;
+	border-radius:3px;
+	color:#516332;
+	font-weight:bold;
+	-webkit-transition:  all .2s linear;
+	-moz-transition:  all .2s linear 0s;
+}
+.current-customer-alert a:hover {
+	background: #fff;
+	border-bottom: 2px solid #a8d657;
+	text-decoration: none;
+}
+table.login.lostpass .description {
+	margin-top: 8px;
+}
+/* the error box */
+#e {
+	display: block;
+	background: #fffbcc;
+	color: #d84c13;
+	border: 1px solid #f0cea2;
+	margin: 5px 0px; padding: 10px;
+}
+
+/* The boxes on the member panel */
+.subscriptions,
+.usefullinks,
+.newsletters,
+.newsletterarchive {
+	/*width: 310px;*/
+	background: #EEE;
+	background: #f4f7f9;
+	border: 3px solid #BBB;
+	border: 1px solid #e0ecee;
+	border-top: 5px solid #cddcdf;
+	margin: 0 0 10px 0;
+	padding: 10px;
+	float: left;
+	width: 300px;
+}
+.subscriptions {
+	width: 335px;
+	margin-right: 10px;
+	margin-bottom: 50px;
+}
+
+.paymenthistory {
+	
+}
+
+.hedit {
+	font-size: 11px;
+	font-family: Verdana, Arial, Sans-Serif;
+    border: solid 1px #DDD;
+    width: 100%;
+    margin: 0 0 50px 0;
+}
+/* hedit - usual column */
+.hedit td {
+    padding: 20px;
+    background-color: #EEE;
+    font-size: 8pt;
+    background-color: white;
+    border: solid 1px #DDD;
+}
+/* hedit - header column */
+.hedit th {
+    padding: 5px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #EFEFEF;
+    border: solid 1px #DDD;
+}
+
+
+/* Stash pricing */
+
+#stash-pricing {
+	display: none;
+	color: #464c50;
+	color: #8E99A0;
+	border-top: 1px solid #ebebeb;
+}
+#stash-pricing .column {
+	width: 31%;
+	float: left;
+	padding: 30px 1% 5px;
+	margin: 0px 0 40px;
+	text-align: center;
+}
+#stash-pricing .stash-bus {font-weight: 200;}
+#stash-pricing .stash-dev {font-weight: 600; border-left: 1px solid #ebebeb;border-right: 1px solid #ebebeb;}
+#stash-pricing .stash-hoarder {font-weight: 900;}
+#stash-pricing p {
+	font-weight: normal;
+}
+.stash-size-wrapper {
+	height: 50px;
+	margin: 0 0 40px 0;
+}
+.stash-size {
+	font-size: 36px;
+	line-height: 1;
+	height: 36px;
+	border: 1px solid #8CC348;
+	display: inline-block;
+	padding: 6px 14px;
+}
+#stash-pricing .stash-bus .stash-size {border-width: 2px;}
+#stash-pricing .stash-dev .stash-size {border-width: 4px;}
+#stash-pricing .stash-hoarder .stash-size {border-width: 6px;}
+
+.btn.green {
+	display: block;
+	padding: 12px 0;
+	margin: 40px auto 0px;
+	background: #8CC348;
+	border-bottom: 3px solid #74a13d;
+	color:#fff;
+	font-size: 36px;
+	line-height: 1.2;
+	text-align: center;
+	text-decoration: none;
+	-webkit-transition:  all .2s linear;
+	-moz-transition:  all .2s linear 0s;
+	-webkit-font-smoothing: antialiased;
+	cursor: pointer;
+}
+.btn.green span {
+	display: block;
+	font-size: 10px;
+	margin-left: 4px;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+.btn.green:hover {
+	background: #b7f46c;
+	border-bottom: 3px solid #8bc248;
+	color:#74a13d;
+}
+.upgrade.btn.green {
+	display: inline-block;
+	padding: 6px 10px;
+	margin: 30px 0 10px;
+	background: #b8f56c;
+	border-bottom: 3px solid #8CC348;
+	color:#638638;
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+}
+.upgrade.btn.green:hover {
+	background: #cdff91;
+	border-bottom: 3px solid #a2d069;
+}
+
+.pass-reset-product-grid {
+	width: 100%;
+	margin: 2em 0;
+	padding: 1em 0;
+}
+
+.pass-reset-product {
+	width: 100%;
+	max-width: 20%;
+	padding: 1em;
+	float: left;
+	box-sizing: border-box;
+}
+
+.pass-reset-product img {
+	width: 100%;
+	height: auto;
+}

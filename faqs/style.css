@@ -1,0 +1,129 @@
+@font-face {
+    font-family: DIN;
+    src: url(fonts/dinregularwebfont.ttf);
+}
+
+h3
+{
+	color:black;
+}
+#nav-bar
+{
+    width: 80%;
+    margin-left: 10%;
+}
+
+#home
+{
+    float: right;
+    color: #2eb161; 
+    font-family: DIN;
+    padding: 2px 7px 2px 7px;
+    font-size: 16.5px;
+    font-weight: 550;
+    
+}
+
+#home:hover
+{
+    text-decoration: none;
+    
+}
+
+#content
+{
+    color:#2eb161;
+    font-family: DIN;
+}
+
+#content h4
+{
+    color: black;
+}
+#content div a
+{
+    color:#2eb161;
+    
+}
+
+#content div a:hover
+{
+    color:#2eb161;
+    
+}
+
+#faqCreate
+{
+    width:102.3%; 
+    color:#fff; 
+    padding: 200px 0px 160px 0px; 
+    height:auto; 
+    text-align:center; 
+    background:#2eb161;
+    font-family: DIN;
+}
+#title
+{
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+#lead
+{
+    font-size: 24px;
+}
+
+#sugBtn
+{
+    outline:none; 
+    background:transparent;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 300;
+    margin-top: 80px;
+    padding: 15px 50px 12px;
+    text-transform: uppercase;
+    transition: all 0.25s;
+}
+
+#sugBtn:hover
+{
+    background: #fff;
+    color:#2eb161;
+}
+
+#myModal
+{
+    background: rgba(0,0,0,0.5);
+}
+#mySubmit
+{
+    float: right;
+    background: transparent;
+    border: 1px solid #fff;
+    transition: all 0.25s;
+}
+
+#mySubmit:hover
+{
+    background: #fff;
+    color:#2eb161;
+}
+
+#myLinks a img
+{
+    height: 28px;
+}
+
+#myPrivacy a 
+{
+    color: #2eb161;
+}
+
+#myPrivacy a:hover
+{
+    color: #2eb161;
+}

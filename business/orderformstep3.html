@@ -1,0 +1,53 @@
+<div class='pay_now'>                        
+    <h2>Order confirmation </h2>
+    <br/>
+                            
+                            
+    <table  class='table' style="border:none;">
+                                
+        <tr>
+            <td>Name:  <?php echo $name; ?> </td>
+            <td><input type="hidden" name="firstname" id="firstname" value="<?php echo $name; ?>" /></td>
+        </tr>
+
+        <tr> 
+            <td>Email: <?php echo $_SESSION['myWpUsername']; ?> </td>
+            <td><input type="hidden" name="email" id="email" value="<?php echo $_SESSION['myWpUsername']; ?>" /></td>
+
+        </tr>
+                                
+                                
+                                
+        <tr>
+
+            <td>Phone: &nbsp;<?php echo  $mobile; ?>
+                <input type='hidden' name="phone" value="<?php echo $mobile; ?>" /></td>
+        </tr>
+                               
+                               
+        
+    </table>
+
+                            
+                        
+
+</div>
+
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+<ul class="list-inline pull-right">
+    <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+<!--                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>-->
+                            
+                            
+    <li>
+        <button type="submit" class="btn btn-primary btn-info-full">Pay now</button>
+    </li>
+</ul>

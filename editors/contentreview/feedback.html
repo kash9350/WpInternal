@@ -1,0 +1,119 @@
+<style>
+        .changevisibility {
+              display: block;
+        }
+        
+    </style>
+<header>
+    <h4>Analyse the writer submission</h4>
+    
+</header>
+
+<h6>Choose an option</h6>
+
+<div class="demo">
+  <label for="reject" onclick="contentOp(1)">
+    <input ng-disabled="x.Email=='none'"  ng-model="visibility" value='reject' id="reject" type="radio" class="option-input radio" name="example"  style="outline:none;"  />
+    Reject the writer</label>
+  <label for='correction' onclick="contentOp(2)">
+    <input ng-disabled="x.Email=='none'" ng-model="visibility" value='correction' id="correction" type="radio" class="option-input radio" name="example"  style="outline:none;"  />
+    Ask for correction</label>
+  <label for="forward" onclick="contentOp(3)">
+    <input ng-disabled="x.Email=='none'" ng-model='visibility' value='forward' id="forward" type="radio" class="option-input radio" name="example" style="outline:none;"  />
+    Extend Time
+    </label>
+    
+    <label for="approval" onclick="contentOp(4)">
+    <input ng-disabled="x.Email=='none'" ng-model='visibility' value='approval' id="approval" type="radio" class="option-input radio" name="example" style="outline:none;"  />
+    Approve Content 
+    </label>
+    
+    <br><br>
+    
+    
+    
+        
+    
+    <style>
+        
+        #loading
+        {
+            -animation: spin .7s infinite linear;
+            -webkit-animation:spin2 .7s infinite linear;
+        }
+        
+        
+        
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+            
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+    </style>
+    
+    
+    
+    <div ng-show="visibility=='reject'"  id="reject" class="container">
+        <h4>Are you sure you want to reject the writer?</h4>
+        <button data-ng-click="rejectionWriter(x.Email, x.OrderID)" style="width:150px" type="button" class="btn btn-info" id='writerReject' ng-bind-html="rejectionContent"></button>
+    </div>
+    
+    <div ng-show="visibility=='correction'" id="correctionPoints" >
+        <h4>List the changes expected from writer</h4>
+        <textarea class="form-control" rows="5" ng-model="correctionPoints" ></textarea><br>
+        <button data-ng-click="correction(x.Email, correctionPoints)" style="width:150px" type="button" class="btn btn-info" ng-bind-html="sendCorrection" ></button>
+
+    </div>
+    
+    <div ng-show="visibility=='forward'" id='upload' >
+        
+        <h4>Enter the extended time for the writer</h4>
+        <input  type="text" class="form-control"  ng-model="extendedTime" placeholder="In Hours" /><br>
+        <button style="width:auto;" data-ng-click="extension(x.Email, x.OrderID, extendedTime, x.Myonlyhours)" style="width:150px" type="button" class="btn btn-info" ng-bind-html="extendtimefx" ></button>
+        
+        
+        
+    </div>
+    
+    <div ng-show="visibility=='approval'" id='approval' >
+        
+        <h4>Are you sure you want to approve the content and pay the writer?</h4>
+        <button style="width:auto" data-ng-click="approval(x.Email, x.OrderID, x.FileUploadStatus, x.Budget)" style="width:150px" type="button" class="btn btn-info" id='writerReject' ng-bind-html="approvalBtn"></button>
+    </div>
+        
+        
+        
+    </div>
+    
+        
+    
+</div>
+<br>
+<header>
+    <h4>Submit content to client</h4>
+</header>
+<div class="demo">
+        <form action="editorUpload.php" method="POST" enctype="multipart/form-data">
+            
+             <input type="hidden" name="orderID" value="{{x.OrderID}}"/>
+             <input type="hidden" name="ClientName" value="{{x.Client}}"/>
+        
+        
+        
+        
+            <div class="fileupload fileupload-new" data-provides="fileupload">
+                <span class="btn btn-primary btn-file"><span class="fileupload-new">Select file</span>
+                    <span class="fileupload-exists">Change</span>         <input type="file" name="doc" id="doc" /></span>
+                <span class="fileupload-preview"></span>
+    <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a><br><br>
+                <button type="submit" class="btn btn-info" >Upload File</button>
+            </div>
+  
+        </form>
+    
+</div>

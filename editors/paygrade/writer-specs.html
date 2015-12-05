@@ -1,0 +1,19 @@
+   <h4>References by the {{writer.email}}</h4>
+   
+           <ul class="list-unstyled">
+               <style>
+                    .mycustomclassforreferences
+                   {
+                    display: none;
+                   }
+               </style>
+
+            <li>
+                 <blockquote>
+                 {{writer.myReferences}}
+                     
+                  </blockquote>
+                
+              </li>
+               <li ng-class="{'mycustomclassforreferences': writer.myReferences!=''}">No references submitted</li>
+            </ul>

@@ -1,0 +1,16 @@
+.myerror{
+			display: none;
+			margin-left: 10px;
+    color: red;
+		}		
+		
+		
+		
+input.invalid
+{
+			border: 1px solid red;
+		}
+		
+input.valid{
+			border: 1px solid green;
+		}

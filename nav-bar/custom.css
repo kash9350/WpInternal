@@ -1,0 +1,174 @@
+.mynavbar
+{
+    box-shadow: 0 0 40px 10px rgba(0, 0, 0, 0.6);
+    background: #002542; /* Old browsers */
+    background: -moz-linear-gradient(left,  #002542 0%, #1d3e55 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#002542), color-stop(100%,#1d3e55)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #002542 0%,#1d3e55 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #002542 0%,#1d3e55 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #002542 0%,#1d3e55 100%); /* IE10+ */
+    background: linear-gradient(to right,  #002542 0%,#1d3e55 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002542', endColorstr='#1d3e55',GradientType=1 ); /* IE6-9 */
+    border: none;
+    border-radius: 0px;
+    
+}
+.mylogo
+{
+    position: relative;
+    left: 75px;
+    top: -8px;
+}
+.mylogo img
+{
+    width: 190px;
+}
+
+@media (min-width: 767px)
+{
+    .navbar-right li
+    {
+        padding: 0px 4px 0px 4px;
+        height: 50px;
+    }
+                        
+    #myNavbar ul li a
+    {
+        color: #fff;
+        font-family: 'Neoteric', sans-serif;
+        font-size: 16px;
+        height:0px;
+        background: transparent;
+        animation-timing-function: linear;
+        transition:height  0.15s;
+    }
+                    
+    #myNavbar ul li:hover a
+    {
+        height: 50px;
+        color:black;
+        background: #ffffff;    
+    }
+    #myNavbar ul li ul 
+    {
+        top: 50px;
+    }
+                    
+    #myNavbar ul li ul li
+    {
+        height: 45px;
+    }
+    #myNavbar ul li ul li a
+    {
+        color: black;
+        transition: 0.3s;
+    }
+    #myNavbar ul li ul li a:hover
+    {
+        color: #2eb161;
+    }
+}
+
+@media (max-width: 950px)
+{
+    .mylogo
+    {
+        position: relative;
+        left: 0px;
+        top: -8px;
+    }
+    .navbar-right li
+    {
+        padding: 0px 0px 0px 0px;
+    }
+                    
+}
+
+@media (max-width: 829px)
+{
+    .mylogo img
+    {
+        width:150px;
+                
+                
+    }
+    .mylogo
+    {
+        top:-4.5px;            
+    }
+                    
+    #myNavbar ul li a
+    {
+        font-size: 14px;
+    }
+}
+@media (max-width: 744px)
+{
+    .mylogo img
+    {
+        width:190px;    
+    }
+    .mylogo
+    {
+        top:-6px;        
+                
+    }
+                
+}
+            
+@media (max-width: 767px)
+{
+ 
+                
+    #myNavbar ul li:hover
+    {
+        background: #fff;
+                        
+    }
+                    
+    #myNavbar ul li a
+    {
+        color:#fff;
+                    
+    }
+                
+    #myNavbar ul li ul li a:hover
+    {
+        color:#2eb161;
+                    
+    }
+    #myNavbar ul li:hover a
+    {
+        background: transparent;
+        color:black;
+                   
+    }
+                
+               
+                
+                
+                
+}
+            
+            
+#mynavtriggerbutton
+{
+    border:none;
+    color:#fff;
+    transition: 0.3s;
+}
+#mynavtriggerbutton span
+{
+    transition: 0.3s;
+}
+            
+#mynavtriggerbutton:hover
+{
+    background: #fff;
+                
+}
+#mynavtriggerbutton:hover span
+{
+    background: #002542;
+}
+            
