@@ -1,0 +1,73 @@
+<style>
+    .changevisibility 
+        {
+              display: block;
+        }
+        
+</style>
+
+<div class="demo" style="text-align: center;">
+ 
+    <style>
+        
+        #loading
+        {
+            -animation: spin .7s infinite linear;
+            -webkit-animation:spin2 .7s infinite linear;
+        }
+        
+        
+        
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+            
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}
+    </style>
+    
+    
+    
+    <div ng-show="visibility=='reject'" id="reject" class="container ng-hide">
+        <h4>Are you sure you want to reject the writer?</h4>
+        <button data-ng-click="rejectionWriter(x.Email)" style="width:150px" type="button" class="btn btn-info ng-binding" id="writerReject" ng-bind-html="rejectionContent">Confirm Rejection</button>
+    </div>
+    
+    <div ng-show="visibility=='correction'" id="correctionPoints" class="ng-hide" style="display: none;">
+        <h4>List the changes expected from writer</h4>
+        <textarea class="form-control ng-pristine ng-untouched ng-valid" rows="5" ng-model="correctionPoints"></textarea><br>
+        <button data-ng-click="correction(x.Email, correctionPoints)" style="width:150px" type="button" class="btn btn-info ng-binding" ng-bind-html="sendCorrection">Claim Corrections</button>
+
+    </div>
+    
+    <div ng-show="visibility=='forward'" id="upload" class="">
+        
+        
+        <form action="editorUpload.php" method="POST" enctype="multipart/form-data" class="ng-pristine ng-valid">
+            
+             <input type="hidden" name="orderID" value="14110021">
+             <input type="hidden" name="ClientName" value="ashimrajkonwar@gmail.com">
+        
+        
+        
+        
+        <div class="fileupload fileupload-new" data-provides="fileupload">
+    <span class="btn btn-primary btn-file"><span class="fileupload-new">Select file</span>
+    <span class="fileupload-exists">Change</span>         <input type="file" name="doc" id="doc"></span>
+    <span class="fileupload-preview"></span>
+    <a href="#" class="close fileupload-exists" data-dismiss="fileupload" style="float: none">×</a><br><br>
+            <button type="submit" class="btn btn-info">Upload File</button>
+  </div>
+  
+  </form>
+        
+        
+    </div>
+    
+        
+    
+</div></div>
