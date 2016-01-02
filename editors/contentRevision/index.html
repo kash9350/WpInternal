@@ -1,10 +1,155 @@
-<html>
-  <head>
-    <title>Content revision</title>
-  </head>
-  
-  
-  <body>
-  
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+
+        <title>Content Revision</title>
+        
+        
+        <script src="jquery.min.js"></script>
+        <script src="bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css"/>
+<!--        <link rel="stylesheet" type="text/css" href="bootstrap-glyphicons.css"/>-->
+        
+        <script src="angular.min.js"></script>
+        <script src="app.js"></script>
+        
+        
+        <link rel="stylesheet" type="text/css" href="customRadio.css"/>
+        <script src="jquery-1.11.1.js"></script>
+        <script src="customRadio.js"></script>
+        
+        
+        <link rel="stylesheet" type="text/css" href="fileUpload.css"/>
+        <script src="fileUpload.js"></script>
+        
+       
+        
+    </head>
+    
+    
+    <body  ng-app="myApp" ng-controller="customersCtrl">
+        
+        <header>
+            <h2 class="text-center">Content Revision List</h2>
+        </header>
+        <br>
+        
+        <form>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <i class="fa fa-search"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></i>
+                    </div>
+
+                    <input type="text" class="form-control" placeholder="Filter by any syntax" ng-model="searchWriter"/>
+                </div>      
+            </div>
+        </form>
+        
+        
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Budget</th>
+                    <th>Descriptions</th>
+                    <th>Corrections</th>
+                    <th>File</th>
+                    <th>Upload</th>
+                </tr>
+            </thead>
+            
+            <tbody style="text-align:left;">
+    <!--     <tr  ng-repeat="writer in store.writers |  filter: { area: 'sports' }">
+ -->
+            <tr  ng-repeat="x in names | filter:searchWriter">
+     
+                <td>{{x.Catagory}}</td>
+                <td>{{x.Area}}</td>
+                <td>{{x.Budget}}</td>
+                
+                
+                
+                
+                
+
+                <td>        
+                    <div class="row header">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#contentDescriptions{{$index}}">View Details</button>
+          
+        
+                    </div>
+                    
+                    <div style="text-align:left" class="modal fade" id="contentDescriptions{{$index}}" role="dialog" >
+                        <div class="modal-dialog modal-lg" >
+                            <div class="modal-content" style="background:rgba(0,0,0,0.6); color:#fff">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" style="color:#fff;">&times;</button>
+                                    <h3 class="modal-title">Content Description</h3>
+                                </div>
+                        
+                                <div class="modal-body" ng-include="'order-description.html'"></div>
+                        
+                        
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" style="background:rgba(0,0,0,0.8); color:#fff;">Close</button>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </td>
+                
+               
+                
+                <td>{{x.Corrections}}</td>
+                
+
+                <td data-target="#uploadedFiles($index)"> 
+                    
+                    <div class="row header" id="uploadedFiles($index)">
+                        <a href="{{'../../uploads/writers/'+ x.Filename}}" download><button style="font-size:10px;" ng-disabled="x.FileUploadStatus==0" type="button" class="btn btn-success" data-toggle="modal" ng-class="{'btn-danger': x.FileUploadStatus==0}" > Download Content</button></a>
+          
+        
+                    </div>
+
+                </td>
+                
+                <td>           
+                    <div class="row header">
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#remarks{{$index}}" ng-click="initialCond()" >Check/Submit to clients</button>
+          
+        
+                    </div>
+                    
+                    <div class="modal fade" id="remarks{{$index}}" role="dialog">
+                       <div class="modal-dialog" style="text-align:left">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                              <h4 class="modal-title">Editor Choices</h4>
+                              </div>
+                        
+                            <div class="modal-body" ng-include="'fileupload.html'"></div>
+                        
+                        
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                           </div>
+                           </div>
+                       </div>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+        
+        
+        
+        
+    </body>
 </html>
