@@ -15,12 +15,15 @@ session_start();
     	
     	
     	$claimedOn=date_create($claimedOn);
-    	$orderedOn=date_create($orderedOn);
+    	$claimfirstphase=date_create($orderedOn);
+    	$cliamsecondphase=date_create($orderedOn);
     	
-    	
-    	if (date_add($orderedOn, date_interval_create_from_date_string("-60 hours")) >= $thisTime)
+		date_add($claimfirstphase, date_interval_create_from_date_string("60 hours"));
+    	date_add($cliamsecondphase, date_interval_create_from_date_string("96 hours"));
+		
+    	if ($claimfirstphase >= $thisTime)
     	{
-    		if (date_add($claimedOn, date_interval_create_from_date_string("-36 hours")) >= $thisTime)
+    		if (date_add($claimedOn, date_interval_create_from_date_string("36 hours")) <= $thisTime)
     		{
     			return "Expired";
     		}
@@ -32,7 +35,8 @@ session_start();
     	
     	else
     	{
-    		if (date_add($orderedOn, date_interval_create_from_date_string("-24 hours")) >= $claimedOn)
+			
+    		if ( $cliamsecondphase>= $thisTime)
     		{
     			return "CanContinue";
     		}
@@ -49,6 +53,7 @@ session_start();
     
     while($myrows = $writerDatabaseClaimTimeUpdate->fetch_array(MYSQLI_ASSOC))
     {
+        
     	switch ($myrows['finalstatus'])
     	{
     		case ('Claimed'):
@@ -81,9 +86,8 @@ session_start();
     				}
     				
     				case ('CanContinue'):
-    				{
- 
-    					break;
+    				{   
+                        break;
     				}
     			}
     			break;
@@ -120,6 +124,12 @@ $outp = "";
 while($rs = $myclaimedprojects->fetch_array(MYSQLI_ASSOC)){
     
     $writerThisorderStatus=mysqli_fetch_object($conn->query( "SELECT finalstatus, ClaimedDateAndTime FROM writerWpRecord WHERE writeremail='".$_SESSION['username']."' AND claimedOrderID='".$rs['txnid']."'"));
+    
+    $claimdate=date_create($writerThisorderStatus->ClaimedDateAndTime);
+    $resubmitTime=date_add($claimdate, date_interval_create_from_date_string("36 hours"));
+    $resubmitCountdown=date_diff($thisTime, $resubmitTime);
+    $resubmitCountdownFormat=$resubmitCountdown->format("%a Day %h  Hours %i Mins");
+    
     {
     
     if ($outp != "") {$outp .= ",";}
@@ -133,6 +143,7 @@ while($rs = $myclaimedprojects->fetch_array(MYSQLI_ASSOC)){
     
     $outp .= '"NoOfPosts":"'   . $rs['noOfPosts']       . '",';
     $outp .= '"DeliveryTime":"'   . $rs['deliveryTime']       . '",';
+    $outp .= '"ResubmitRemainingTime":"'   . $resubmitCountdownFormat     . '",';
     $outp .= '"Goal":"'   . $rs['goal']       . '",';
     $outp .= '"Styleofwriting":"'   . $rs['style_of_writing']       . '",';
     $outp .= '"ContentSample":"'   . $rs['sample_blog']       . '",';

@@ -1046,9 +1046,28 @@
 
 }
 
-@media (min-width: 480px) {
-    
+@media (max-width: 413px) {
+   	
+	.how_it_works #sectors div img
+	{
+		width: 40px;
+		height: 40px;
+	}
 }
+
+
+@media (max-width: 432px) {
+   	
+	.best_wr .row div img
+	{
+		height: 55px;
+	}
+	.best_wr .row div
+	{
+		font-size: 12px;
+	}
+}
+
 
 
 

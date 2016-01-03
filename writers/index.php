@@ -474,7 +474,7 @@ include('emptydatabase.php');
                     
                     <div class="alert" ng-hide="myclaimedproject[myclaimed].ThisOrderStatus=='Claimed'"  ng-class="{'alert-info':myclaimedproject[myclaimed].ThisOrderStatus=='Uploaded' || myclaimedproject[myclaimed].ThisOrderStatus=='ResubmitTimeup', 'alert-success':myclaimedproject[myclaimed].ThisOrderStatus=='Approved', 'alert-warning':myclaimedproject[myclaimed].ThisOrderStatus=='Rejected', 'alert-danger':myclaimedproject[myclaimed].ThisOrderStatus=='Timeout'}" style="text-align:center;margin-right:3.5%;">
                     
-  					<span ng-show="myclaimedproject[myclaimed].ThisOrderStatus=='Uploaded'" >You have already uploaded. Your content is under review. If you want to improve your submitted content, you can upload again within TIMELEFT.</span>
+  					<span ng-show="myclaimedproject[myclaimed].ThisOrderStatus=='Uploaded'" >You have already uploaded. Your content is under review. If you want to improve your submitted content, you can upload again within<br> {{myclaimedproject[myclaimed].ResubmitRemainingTime}}.</span>
   					<span ng-show="myclaimedproject[myclaimed].ThisOrderStatus=='ResubmitTimeup'" >Your uploaded content is under review. Content status will be uploaded shortly.</span>
   					<span ng-show="myclaimedproject[myclaimed].ThisOrderStatus=='Approved'" >Your uploaded content is appoved. Your balance has been updated.</span>
   					<span ng-show="myclaimedproject[myclaimed].ThisOrderStatus=='Rejected'" >Your submitted content is rejected due low quality. Please try claiming another project.</span>

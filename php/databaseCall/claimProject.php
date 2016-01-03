@@ -22,38 +22,51 @@ if (isset($_POST["orderID"]) && isset($_POST["username"]) && isset($_POST["Order
     
     $result=mysqli_query($conn, $writerGrade);
     
+    /*Check if writer is previously rejected*/
+    $checkRejection=mysqli_query($conn, "SELECT finalstatus FROM writerwprecord WHERE writeremail='".$_POST['username']."' AND claimedOrderID='".$_POST["orderID"]."'");
     
-    if (mysqli_num_rows($result)!=0)
+    
+    $gradeFetch=mysqli_fetch_object($result);  
+    $payGrade=$gradeFetch->paygrade;
+    $resultWriter=mysqli_fetch_object(mysqli_query($conn, $writer));
+    $anyClaim=$resultWriter->canClaim;
+    
+    switch (true)
     {
-    
-    
-        $gradeFetch=mysqli_fetch_object($result);
+        case (mysqli_num_rows($result)==0):
+            {
+                $message="You have to submit a sample on this catagory to take this project";
+                break;
+            }
+            
+        case (mysqli_num_rows($checkRejection)!=0):
+            {
+                $message="You cannot claim this project as you have been previously rejected in this project.";
+                break;
+            }
+            
         
-        $payGrade=$gradeFetch->paygrade;
-       
+            
+        case ($anyClaim==0):
+            {
+                $message=$anyClaim."You have already claimed a project. Finish it to claim another one";
+                break;
+            }
+            
+        case (($payGrade+ ($payGrade/4)) < $contentQuality):
+            {
+                $message="Your profile doesn't meet the required skill level";
+                break;
+            }
+            
         
-        
- 
-    
-        $resultWriter=mysqli_fetch_object(mysqli_query($conn, $writer));
-        $anyClaim=$resultWriter->canClaim;
-        
-      
-        
-    
-    
-    
-    
-    
-    
-    if ($anyClaim==1 )
-    {
-
-    
-    if (($payGrade+ ($payGrade/4)) >= $contentQuality)
-    {
-        
-        date_default_timezone_set('Asia/Calcutta');
+            
+        case (($payGrade+ ($payGrade/4)) >= $contentQuality):
+            {
+                
+                
+                
+                 date_default_timezone_set('Asia/Calcutta');
 	$date=date("Y-m-d H:i:s");
     
     
@@ -205,13 +218,6 @@ You have applied for ".$claimedmails['orders'].". The details are as follows:<br
  </div>
 
 
-
-
-
-
-
-
-
 <br><br>
 The Submission is due on ".$writersubmitdateformat.". Please note that failing to submit the job or submitting the job late may have consequences. So please make it a point to stick to this deadline. <br><br><br><br>
 Regards,<br>
@@ -227,41 +233,16 @@ $headers .= 'From: White Panda <whitepanda@business.com>' . "\r\n";
 
 mail($to,$subject,$message,$headers);
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
         
         
         $message="This project is now on your claimed list. Your submission deadline is on ".$writersubmitdateformat.".";
-        
+       
+            }
     }
     
-    else
-    {
-        $message="Your profile doesn't meet the required skill level";
-        
-    }
-        
-    }
+  
     
-    
-    else
-    {
-        $message="You have already claimed a project. Finish it to claim another one";
-    }
-    
-}
-    else
-    {
-        $message="You have to submit a sample on this catagory to take this project";
-    }
     
 }
 
